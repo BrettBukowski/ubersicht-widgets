@@ -28,7 +28,7 @@ update: (output, domEl) ->
   $domEl.find('.date').text @dayMapping[date.getDay()]
   $domEl.find('.temp').html """
     <span class='current'>#{Math.round(currently.temperature)}°</span>
-    <span class='hi'>#{Math.round(today.temperatureMax)}°</span> /
+    <span class='hi'>#{Math.round(today.temperatureMax)}° / </span>
     <span class='lo'>#{Math.round(today.temperatureMin)}°</span>
   """
 
@@ -38,7 +38,7 @@ update: (output, domEl) ->
   forecastEl = $domEl.find('.forecast').html('')
   for day in data.daily.data[1..5]
     forecastEl.append @renderForecast(day)
-  $domEl.find('.tomorrow-summary').html(data.daily.data[1].summary)
+  $domEl.find('.tomorrow-summary').html('Tomorrow: ' + data.daily.data[1].summary)
 
 renderForecast: (data) ->
   date = @getDate data.time
@@ -92,7 +92,7 @@ style: """
 
     .current
       color: #fff
-      margin-right: 20px
+      margin-right: 30px
 
     .hi
       font-size: 24px
@@ -108,6 +108,9 @@ style: """
     line-height: 1.5
     color: #fff
     margin-top: 20px
+
+  .tomorrow-summary
+    font-size: 12px
 
   .forecast
     margin-top: 15px
