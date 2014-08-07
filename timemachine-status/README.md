@@ -2,4 +2,4 @@
 
 Displays Timemachine backup status as a donut graph.
 
-Requires [ARCFont](ckyp.us/42aX).
+Requires [ARCFont](http://ckyp.us/42aX).
