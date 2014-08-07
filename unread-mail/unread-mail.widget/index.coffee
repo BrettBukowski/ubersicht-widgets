@@ -5,11 +5,13 @@ tell application id "com.apple.mail"
     set unreadCount to (get unread count of inbox)
     if unreadCount > 0 then
         set theMessages to (messages of inbox whose read status is false)
-        repeat with i from 1 to number of items in theMessages
-            set thisMessage to item i of theMessages
+        set counter to 1
+        repeat unreadCount times
+            set thisMessage to item counter of theMessages
             set fromMsg to (sender of thisMessage as string)
             set subjMsg to (subject of thisMessage as string)
             set finalText to finalText & fromMsg & newline & "      " & subjMsg & newline
+            set counter to counter + 1
         end repeat
     else
         set finalText to "No mail"
@@ -32,18 +34,16 @@ style: """
 
     .sender
         color: rgba(255, 255, 255, .6)
-        width: 150px
+        width: 180px
         float: left
+        font-size: 16px
         overflow: hidden
         text-overflow: ellipsis
+        white-space: nowrap
 
     .subject
         float: left
         margin-left: 10px
-"""
-
-render: (output) -> """
-#{output}
 """
 
 update: (output, domEl) ->
@@ -51,13 +51,11 @@ update: (output, domEl) ->
     outputLines = output.split("\n")
     for e, i in outputLines by 2
         [sender, subject] = outputLines[i .. i + 1]
-        formatted.push("<div>")
-        formatted.push("<span class='sender'>#{sender}</span>")
-        formatted.push("<span class='subject'>#{subject}</span>")
-        formatted.push("</div>")
+        formatted.push("""<div>
+        <span class='sender'>#{sender}</span>
+        <span class='subject'>#{subject}</span>
+        </div>""")
 
-    # Ever since Mavericks, `(messages of inbox whose read status is false)`
-    # returns _all_ unread messages (not limited to just inbox).
     if formatted.length > 10
         formatted = formatted[0..10]
 
