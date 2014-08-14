@@ -17,6 +17,8 @@ Widgets for the excellent [Übersicht](http://tracesof.net/uebersicht/).
 
 ### Unread Adium IMs
 
+![](https://raw.githubusercontent.com/BrettBukowski/ubersicht-widgets/master/adium-unread-ims/screenshot.png)
+
 ### Weather
 
 ![](https://raw.githubusercontent.com/BrettBukowski/ubersicht-widgets/master/weather/screenshot.png)

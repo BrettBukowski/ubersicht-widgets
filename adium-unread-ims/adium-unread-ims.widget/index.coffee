@@ -10,7 +10,7 @@ if adiumisrunning then
         if unreads is equal to 1 then
             return "1 unread IM"
         else if unreads is not equal to 0 then
-            return unreads & " unread IMs"
+            return (unreads as string) & " unread IMs"
         end if
     end tell
 end if'
