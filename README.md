@@ -13,6 +13,8 @@ Widgets for the excellent [Übersicht](http://tracesof.net/uebersicht/).
 
 ### Unread emails
 
+![](https://raw.githubusercontent.com/BrettBukowski/ubersicht-widgets/master/unread-mail/screenshot.png)
+
 ### Unread Adium IMs
 
 ### Weather
