@@ -3,6 +3,8 @@ ubersicht-widgets
 
 Widgets for the excellent [Übersicht](http://tracesof.net/uebersicht/).
 
+*****
+
 ### Percentage of available disk space
 
 ![](https://raw.githubusercontent.com/BrettBukowski/ubersicht-widgets/master/disk-space/screenshot.png)
@@ -22,3 +24,7 @@ Widgets for the excellent [Übersicht](http://tracesof.net/uebersicht/).
 ### Weather
 
 ![](https://raw.githubusercontent.com/BrettBukowski/ubersicht-widgets/master/weather/screenshot.png)
+
+### Backblaze Status
+
+![](https://raw.githubusercontent.com/BrettBukowski/ubersicht-widgets/master/backblaze-status/screenshot.png)
