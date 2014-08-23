@@ -17,6 +17,9 @@ style: """
   .hide
     display: none
 
+  .files::after
+    content: " ⁄"
+
 """
 
 render: () -> """
@@ -34,7 +37,7 @@ update: (output, domEl) ->
   files = output.match(/remainingnumfilesforbackup="(\d+)"/)
   if files
     files = parseInt(files[1], 10)
-    filesEl.html(files + ' files').removeClass('hide')
+    filesEl.html("#{files} file" + if files != 1 then 's' else '').removeClass('hide')
 
   bytes = output.match(/remainingnumbytesforbackup="(\d+)"/)
   if bytes
