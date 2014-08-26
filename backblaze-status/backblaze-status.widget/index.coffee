@@ -42,7 +42,8 @@ update: (output, domEl) ->
   bytes = output.match(/remainingnumbytesforbackup="(\d+)"/)
   if bytes
     bytes = parseInt(bytes[1] / 1048576, 10)
-    bytesEl.html(bytes + ' mb').removeClass('hide')
+    label = if bytes > 1000 then (bytes / 1000).toFixed(2) + ' gb' else bytes + ' mb'
+    bytesEl.html(label).removeClass('hide')
 
   if !files && !bytes
     finishedEl.removeClass('hide')
