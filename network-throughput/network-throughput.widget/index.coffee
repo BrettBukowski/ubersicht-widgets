@@ -22,6 +22,7 @@ style: """
     font-size: 10px
 
   > div
+    background: rgba(255, 255, 255, .2)
     border: 1px solid #fff
     font-size: 24px
     font-weight: 100
@@ -31,7 +32,7 @@ style: """
     overflow: hidden
 
   .speed
-    padding: 4px 6px 4px 6px
+    padding: 4px 6px
     position: relative
 
   .label
@@ -41,43 +42,33 @@ style: """
     font-size: 10px
     text-transform: uppercase
 
-  .in, .out
-    background: rgba(255, 255, 255, .2)
-
   .in
     border-bottom: 0
-
-  .hidden
-    display: none
 """
 
 render: -> """
   <div class='in'>
-    <div class='speed'>0.00 KB/s</div>
+    <div class='speed'>0.0 kB/s</div>
     <div class='label'>in</div>
   </div>
   <div class='out'>
-    <div class='speed'>0.00 KB/s</div>
+    <div class='speed'>0.0 kB/s</div>
     <div class='label'>out</div>
   </div>
 """
 
+units: ['B','kB','MB','GB','TB','PB','EB','ZB','YB']
+
 renderBytes: (bytes) ->
   bytes = Number(bytes)
   threshold = 1000
+  unit = 0
 
-  if bytes < threshold
-    units = ['B']
-    u = 0
-  else
-    units = ['kB','MB','GB','TB','PB','EB','ZB','YB']
-    u = -1
-    until bytes <= threshold
-      bytes /= threshold
-      ++u
+  until bytes <= threshold
+    bytes /= threshold
+    unit++
 
-  "#{bytes.toFixed(1)} #{units[u]}/s"
-
+  "#{bytes.toFixed(1)} #{@units[unit]}/s"
 
 update: (output, domEl) ->
   [incoming, outgoing] = output.split(' ')
