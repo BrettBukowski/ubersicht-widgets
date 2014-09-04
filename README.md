@@ -28,3 +28,7 @@ Widgets for the excellent [Übersicht](http://tracesof.net/uebersicht/).
 ### Backblaze Status
 
 ![](https://raw.githubusercontent.com/BrettBukowski/ubersicht-widgets/master/backblaze-status/screenshot.png)
+
+### Network throughput
+
+![](https://raw.githubusercontent.com/BrettBukowski/ubersicht-widgets/master/network-throughput/screenshot.png)
