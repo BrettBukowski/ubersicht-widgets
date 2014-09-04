@@ -3,11 +3,11 @@ command: "cat /Library/Backblaze.bzpkg/bzdata/bzreports/bzstat_remainingbackup.x
 refreshFrequency: 2000
 
 style: """
-  top: 50%
+  top: 140px
   left: 2%
   color: #fff
   font-family: Futura
-  font-size: 35pt
+  font-size: 28pt
   line-height: 26pt
 
   .label
