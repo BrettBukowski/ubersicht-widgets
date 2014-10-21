@@ -1,4 +1,4 @@
-command: "df -hl | grep 'disk0s2' | awk '{sub(/%/, \"\");print $4; print $5}'"
+command: "df -hl | grep 'disk1' | awk '{sub(/%/, \"\");print $4; print $5}'"
 
 refreshFrequency: 2000
 
